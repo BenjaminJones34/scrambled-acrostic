@@ -23,6 +23,11 @@ for (let i = 0; i < textArr.length; i++) {
     }
 }
 
+//removes all whitespace from textArr
+while (textArr.includes(" ")) {
+    textArr.splice(textArr.indexOf(" "), 1);
+}
+
 let messageArr = argv.message.toLowerCase().replace(/[^\w\s]/gi, '').split("");
 
 // this removes all whitespace
