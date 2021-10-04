@@ -2,8 +2,7 @@ const yargs = require("yargs/yargs");
 const { hideBin } = require("yargs/helpers");
 const argv = yargs(hideBin(process.argv)).argv;
 
-//the replace removes non-alphanumeric characters
-let textArr = argv.text.toLowerCase().replace(/[^\w\s]/gi, '').split("");
+let textArr = argv.text.toLowerCase().replace(/[^\w\s]/gi, '').split(""); //the replace removes non-alphanumeric characters
 let flag = false; 
 
 //changing textArr to only have letters from beginning and end of words
