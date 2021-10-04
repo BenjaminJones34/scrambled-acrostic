@@ -24,11 +24,14 @@ for (let i = 0; i < textArr.length; i++) {
     }
 }
 
-let messageArr = argv.message.toLowerCase().replace(/[^\w\s]/gi, '').split(""); // the /\s+/ will remove all whitespace
+let messageArr = argv.message.toLowerCase().replace(/[^\w\s]/gi, '').split("");
+
+// this removes all whitespace
 while (messageArr.includes(" ")) {
     messageArr.splice(messageArr.indexOf(" "), 1);
 }
 
+// this checks if the message given is possible
 function acrosticMessageCheck() {
     for (let letter of messageArr) {
         if (textArr.includes(letter)) {
