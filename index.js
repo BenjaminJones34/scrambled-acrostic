@@ -6,9 +6,7 @@ let textArr = argv.text.toLowerCase().replace(/[^\w\s]/gi, '').split(""); //the 
 let flag = false; 
 
 function removeWhitespace(arr) {
-    while (arr.includes(" ")) {
-        arr.splice(arr.indexOf(" "), 1);
-    } return arr;
+    return arr.filter((char) => char !== " ");
 }
 
 //changing textArr to only have letters from beginning and end of words
