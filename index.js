@@ -5,6 +5,12 @@ const argv = yargs(hideBin(process.argv)).argv;
 let textArr = argv.text.toLowerCase().replace(/[^\w\s]/gi, '').split(""); //the replace removes non-alphanumeric characters
 let flag = false; 
 
+function removeWhitespace(arr) {
+    while (arr.includes(" ")) {
+        arr.splice(arr.indexOf(" "), 1);
+    } return arr;
+}
+
 //changing textArr to only have letters from beginning and end of words
 for (let i = 0; i < textArr.length; i++) {
     if (textArr[i] !== " ") {
@@ -23,17 +29,11 @@ for (let i = 0; i < textArr.length; i++) {
     }
 }
 
-//removes all whitespace from textArr
-while (textArr.includes(" ")) {
-    textArr.splice(textArr.indexOf(" "), 1);
-}
+textArr = removeWhitespace(textArr);
 
 let messageArr = argv.message.toLowerCase().replace(/[^\w\s]/gi, '').split("");
 
-// this removes all whitespace
-while (messageArr.includes(" ")) {
-    messageArr.splice(messageArr.indexOf(" "), 1);
-}
+messageArr = removeWhitespace(messageArr)
 
 // this checks if the message given is possible
 function acrosticMessageCheck() {
