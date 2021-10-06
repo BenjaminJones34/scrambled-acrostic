@@ -31,7 +31,7 @@ textArr = removeWhitespace(textArr);
 
 let messageArr = argv.message.toLowerCase().replace(/[^\w\s]/gi, '').split("");
 
-messageArr = removeWhitespace(messageArr)
+messageArr = removeWhitespace(messageArr);
 
 // this checks if the message given is possible
 function acrosticMessageCheck() {
